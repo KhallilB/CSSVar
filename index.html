@@ -31,11 +31,24 @@
       />
 
       <label for="base">Base Color</label>
-      <input type="color" name="base" value="ffc600" />
+      <input type="color" name="base" value="#ffc600" />
     </div>
 
-    <img
-      src="https://www.google.com/url?sa=i&rct=j&q=&esrc=s&source=images&cd=&cad=rja&uact=8&ved=2ahUKEwjz3IvXkI_gAhUfJDQIHSR_CGgQjRx6BAgBEAU&url=https%3A%2F%2Fwww.mas.org%2Finitiatives%2Faccidental-skyline%2F&psig=AOvVaw38o_0_tpFnAYklx2_QHPOV&ust=1548718640232223"
-    />
+    <img src="https://i.ytimg.com/vi/K-40V_3eCEs/maxresdefault.jpg" />
+
+    <script>
+      const inputs = document.querySelectorAll('.controls input');
+
+      function handleUpdate() {
+        const suffix = this.dataset.sizing || '';
+        document.documentElement.style.setProperty(
+          `--${this.name}`,
+          this.value + suffix
+        );
+        console.log(suffix);
+      }
+
+      inputs.forEach(input => input.addEventListener('change', handleUpdate));
+    </script>
   </body>
 </html>
